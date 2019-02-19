@@ -261,24 +261,24 @@ void HungarianAlgorithm::step4(int minDim, int row, int col)
 	m_new_star_matrix[row + m_n_rows * col] = true;
 
 	/* find starred zero in current column */
-	int star_col = col;
-  int star_row = 0;
-	for (; star_row<m_n_rows; ++star_row) {
+	uint32_t star_col = col;
+        uint32_t star_row = 0;
+	for (; star_row < m_n_rows; ++star_row) {
 		if (m_star_matrix[star_row + m_n_rows * star_col]) {
 			break;
     }
   }
 
-	while (star_row < m_n_rows) {
-		/* unstar the starred zero */
-		m_new_star_matrix[star_row + m_n_rows * star_col] = false;
+  while (star_row < m_n_rows) {
+    /* unstar the starred zero */
+    m_new_star_matrix[star_row + m_n_rows * star_col] = false;
 
-		/* find primed zero in current row */
-		int prime_row = star_row;
-    int prime_col = 0;
-		for (; prime_col < m_n_cols; ++prime_col) {
-			if (m_prime_matrix[prime_row + m_n_rows * prime_col]) {
-				break;
+    /* find primed zero in current row */
+    uint32_t prime_row = star_row;
+    uint32_t prime_col = 0;
+    for (; prime_col < m_n_cols; ++prime_col) {
+      if (m_prime_matrix[prime_row + m_n_rows * prime_col]) {
+        break;
       }
     }
 
