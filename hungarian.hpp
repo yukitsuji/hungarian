@@ -16,8 +16,8 @@ public:
                unsigned int n_rows, unsigned int n_cols);
 
 private:
-  int m_n_cols;
   int m_n_rows;
+  int m_n_cols;
   int m_n_elements;
   double m_dist_matrix[256 * 256] = {0};
   double m_assignment[256] = {0};
