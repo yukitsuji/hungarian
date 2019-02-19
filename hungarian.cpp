@@ -222,7 +222,7 @@ void HungarianAlgorithm::step3(int minDim)
 						m_prime_matrix[row + m_n_rows * col] = true;
 
 						/* find starred zero in current row */
-            int32_t star_col = 0;
+            uint32_t star_col = 0;
 	    for (; star_col < m_n_cols; ++star_col) {
 	      if (m_star_matrix[row + m_n_rows * star_col]) {
 	        break;
